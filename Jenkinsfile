@@ -32,7 +32,7 @@ pipeline {
 		stage('clean'){
 			steps{
 				echo "------------>Clean<------------"
-				sh 'gradle --b microservicio/build.gradle clean compileJava'
+				sh 'gradle --b /microservicio/build.gradle clean compileJava'
 			}
 		}
 		
