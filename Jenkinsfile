@@ -25,10 +25,40 @@ pipeline {
 			steps{
 				echo "------------>Checkout<------------"
 				checkout([$class: 'GitSCM', branches: [[name: 'master']], doGenerateSubmoduleConfigurations: false, extensions: [], gitTool: 'Git_Centos', submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GitHub_Santiagorestrepog', url: 'https://github.com/Santiagorestrepog/ADN-Banco.git']]])
-				sh 'gradle clean' microservicio/build.gradle compileJava'
+				sh 'gradle clean' 
 			}
 		}
 		
+		stage('Compile') {
+			steps{
+				echo "------------>Compile<------------"
+				sh 'gradle --b ./build.gradle compileJava'
+			}
+		}
+		
+		stage('Unit Tests') {
+			steps{
+				echo "------------>Unit Tests<------------"
+				sh 'gradle test'
+				junit '**/build/test-results/test/*.xml' //aggregate test results - JUnit
+			}
+		}
+		
+		stage('Static Code Analysis') {
+			steps{
+				echo '------------>Static Code Analysis<------------'
+				withSonarQubeEnv('Sonar') {
+					sh "${tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner"
+				}
+			}
+		}
+		
+		stage('Build') {
+			steps {
+				echo "------------>Build<------------"
+				sh 'gradle build -x test'
+			}
+		}
 	}
 	
 	post {
