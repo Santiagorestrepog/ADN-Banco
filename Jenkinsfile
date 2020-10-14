@@ -25,7 +25,14 @@ pipeline {
 			steps{
 				echo "------------>Checkout<------------"
 				checkout([$class: 'GitSCM', branches: [[name: 'master']], doGenerateSubmoduleConfigurations: false, extensions: [], gitTool: 'Git_Centos', submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GitHub_Santiagorestrepog', url: 'https://github.com/Santiagorestrepog/ADN-Banco.git']]])
-				sh 'gradle clean ./microservicio'
+				sh 'gradle --b ./microservicio '
+			}
+		}
+		
+		stage('Compile') {
+			steps{
+				echo "------------>Compile<------------"
+				sh 'gradle --b ./build.gradle clean'
 			}
 		}
 		
