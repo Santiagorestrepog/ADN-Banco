@@ -29,6 +29,37 @@ pipeline {
 			}
 		}
 		
+		stage('Compile') {
+			steps{
+				echo "------------>Compile<------------"
+				sh 'gradle --b ./microservicio/build.gradle compileJava'
+			}
+		}
+		
+		stage('Unit Tests') {
+			steps{
+				echo "------------>Unit Tests<------------"
+				sh 'gradle test'
+				junit '**/build/test-results/test/*.xml' //aggregate test results - JUnit
+			}
+		}
+		
+		stage('Static Code Analysis') {
+			steps{
+				echo '------------>Static Code Analysis<------------'
+				withSonarQubeEnv('Sonar') {
+					sh "${tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner"
+				}
+			}
+		}
+		
+		stage('Build') {
+			steps {
+				echo "------------>Build<------------"
+				sh 'gradle build -x test'
+			}
+		}
+		
 	
 	}
 	
