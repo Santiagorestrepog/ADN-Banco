@@ -29,13 +29,6 @@ pipeline {
 			}
 		}
 		
-		stage('Compile') {
-			steps{
-				echo "------------>Compile<------------"
-				sh 'gradle --b ./microservicio/build.gradle compileJava'
-			}
-		}
-		
 		
 		stage('Build') {
 			steps {
