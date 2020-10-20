@@ -18,6 +18,10 @@ public class RepositorioCreditoMysql implements RepositorioCredito {
     @SqlStatement(namespace="credito", value="actualizar")
     private static String sqlActualizar;
 
+    @SqlStatement(namespace="credito", value="existe")
+    private static String sqlExiste;
+
+
     public RepositorioCreditoMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
     }
@@ -30,7 +34,13 @@ public class RepositorioCreditoMysql implements RepositorioCredito {
 
     @Override
     public boolean existe(Integer usuario, Boolean estado) {
-        return false;
+
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("idUsuario", usuario);
+        paramSource.addValue("estado", estado);
+
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste,paramSource, Boolean.class);
+
     }
 
 
