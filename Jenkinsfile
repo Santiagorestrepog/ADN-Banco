@@ -29,23 +29,13 @@ pipeline {
 			}
 		}
 		
-		
-		stage('Unit Tests') {
+		stage('Compile') {
 			steps{
-				echo "------------>Unit Tests<------------"
-				sh 'gradle --b ./microservicio/build.gradletest'
-				junit '**/build/test-results/test/*.xml' //aggregate test results - JUnit
+				echo "------------>Compile<------------"
+				sh 'gradle --b ./microservicio/build.gradle compileJava'
 			}
 		}
 		
-		stage('Static Code Analysis') {
-			steps{
-				echo '------------>Static Code Analysis<------------'
-				withSonarQubeEnv('Sonar') {
-					sh "${tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner"
-				}
-			}
-		}
 		
 		stage('Build') {
 			steps {
