@@ -9,7 +9,7 @@ public class CreditoTestDataBuilder {
     private Double valorCredito;
     private Integer idUsuario;
     private String tipoCredito;
-    private Integer tazaInteres;
+    private Integer tasaInteres;
     private Integer cuotasTotales;
     private Integer cuotasPagadas;
     private Boolean estado;
@@ -22,7 +22,7 @@ public class CreditoTestDataBuilder {
         valorCredito = 10000.0;
         idUsuario = 123;
         tipoCredito = "Libre";
-        tazaInteres = 1;
+        tasaInteres = 1;
         cuotasTotales = 3;
         cuotasPagadas = 2;
         estado = true;
@@ -32,7 +32,7 @@ public class CreditoTestDataBuilder {
 
     }
 
-    public Credito build() { return new Credito(id,valorCredito,idUsuario,tipoCredito,tazaInteres,cuotasTotales,cuotasPagadas,estado,valorActual,interesMora, fechacredito);
+    public Credito build() { return new Credito(id,valorCredito,idUsuario,tipoCredito,tasaInteres,cuotasTotales,cuotasPagadas,estado,valorActual,interesMora, fechacredito);
     }
 
 

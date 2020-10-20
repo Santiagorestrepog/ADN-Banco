@@ -16,7 +16,7 @@ create table credito (
  valorCredito double not null,
  idUsuario int not null,
  tipoCredito varchar(100) not null,
- tazaInteres int(10) not null,
+ tasaInteres int(10) not null,
  cuotasTotales int(10) not null,
  cuotasPagadas int(10) DEFAULT 0,
  estado varchar(5) not null,

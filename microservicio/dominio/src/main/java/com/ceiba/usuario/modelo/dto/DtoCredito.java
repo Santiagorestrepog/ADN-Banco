@@ -13,7 +13,7 @@ public class DtoCredito {
     private Double valorCredito;
     private Integer idUsuario;
     private String tipoCredito;
-    private Integer tazaInteres;
+    private Integer tasaInteres;
     private Integer cuotasTotales;
     private Integer cuotasPgadas;
     private Boolean estado;

@@ -18,7 +18,7 @@ public class ComandoCredito {
     private Double valorCredito;
     private Integer idUsuario;
     private String tipoCredito;
-    private Integer tazaInteres;
+    private Integer tasaInteres;
     private Integer cuotasTotales;
     private Integer cuotasPagadas;
     private Boolean estado;

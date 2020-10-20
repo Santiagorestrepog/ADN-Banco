@@ -2,7 +2,7 @@ update CREDITO
 set valorCredito = :valorCredito,
     idUsuario = :idUsuario,
     tipoCredito = :tipoCredito,
-    tazaInteres = :tazaInteres,
+    tasaInteres = :tasaInteres,
     cuotasTotales = :cuotasTotales,
     cuotasPagadas = :cuotasPagadas,
 	estado = :estado,

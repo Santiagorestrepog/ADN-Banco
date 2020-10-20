@@ -1,1 +1,1 @@
-insert into credito (valorCredito,idUsuario,tipoCredito,tazaInteres,cuotasTotales,cuotasPagadas,estado,valorActual,interesMora,fechacredito) values (:valorCredito,:idUsuario,:tipoCredito,:tazaInteres,:cuotasTotales,cuotasPagadas,:estado,:valorActual,:interesMora,:fechacredito)
+insert into credito (valorCredito,idUsuario,tipoCredito,tasaInteres,cuotasTotales,cuotasPagadas,estado,valorActual,interesMora,fechacredito) values (:valorCredito,:idUsuario,:tipoCredito,:tasaInteres,:cuotasTotales,cuotasPagadas,:estado,:valorActual,:interesMora,:fechacredito)

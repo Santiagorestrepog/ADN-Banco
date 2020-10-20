@@ -26,6 +26,7 @@ public class ComandoControladorCredito {
 
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping
     @ApiOperation("Crear credito")
     public ComandoRespuesta<Long> crear(@RequestBody ComandoCredito comandoCredito) {

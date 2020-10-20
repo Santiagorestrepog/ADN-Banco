@@ -18,7 +18,7 @@ public class MapeoCredito implements RowMapper<DtoCredito>, MapperResult {
         Double valorCredito = resultSet.getDouble("valorCredito");
         Integer idUsuario = resultSet.getInt("idUsuario");
         String tipoCredito = resultSet.getString("tipoCredito");
-        Integer tazaInteres = resultSet.getInt("tazaInteres");
+        Integer tasaInteres = resultSet.getInt("tasaInteres");
         Integer cuotasTotales = resultSet.getInt("cuotasTotales");
         Integer cuotasPagadas = resultSet.getInt("cuotasPagadas");
         Boolean estado = resultSet.getBoolean("estado");
@@ -26,6 +26,6 @@ public class MapeoCredito implements RowMapper<DtoCredito>, MapperResult {
         Double interesMora = resultSet.getDouble("interesMora");
         Date fechacredito = resultSet.getDate("fechacredito");
 
-        return new DtoCredito(id,valorCredito,idUsuario,tipoCredito,tazaInteres,cuotasTotales,cuotasPagadas,estado,valorActual,interesMora,fechacredito);
+        return new DtoCredito(id,valorCredito,idUsuario,tipoCredito,tasaInteres,cuotasTotales,cuotasPagadas,estado,valorActual,interesMora,fechacredito);
     }
 }

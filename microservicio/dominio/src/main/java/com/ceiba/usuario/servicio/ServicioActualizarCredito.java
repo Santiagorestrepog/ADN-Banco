@@ -63,7 +63,7 @@ public class ServicioActualizarCredito {
 
            // Integer diasMora = fechaRealEntregaCredito.get(Calendar.DAY_OF_MONTH ) - fechaCredito.get(Calendar.DAY_OF_MONTH );
 
-            double ValorInteresMora = (credito.getValorCredito() * credito.getTazaInteres()) / 100;
+            double ValorInteresMora = (credito.getValorCredito() * credito.getTasaInteres()) / 100;
             double ValorActualIntereses = credito.getValorActual() + (ValorInteresMora * daysdiff);
 
             credito.setValorActual(ValorActualIntereses);
