@@ -11,7 +11,7 @@ pipeline {
 	
 	//A section defining tools to auto-install and put on the PATH
 	tools {
-		jdk 'JDK10_Centos'
+		jdk 'JDK11_Centos'
 		gradle 'Gradle5.6_Centos'
 	}
 	
