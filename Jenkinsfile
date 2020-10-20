@@ -11,7 +11,7 @@ pipeline {
 	
 	//A section defining tools to auto-install and put on the PATH
 	tools {
-		jdk 'JDK8_Centos'
+		jdk 'JDK10_Centos'
 		gradle 'Gradle5.6_Centos'
 	}
 	
@@ -39,7 +39,7 @@ pipeline {
 		stage('Unit Tests') {
 			steps{
 				echo "------------>Unit Tests<------------"
-				sh 'gradle test'
+				sh 'gradle --b ./microservicio/build.gradle test'
 				junit '**/build/test-results/test/*.xml' //aggregate test results - JUnit
 			}
 		}
