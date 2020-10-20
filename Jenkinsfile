@@ -29,11 +29,11 @@ pipeline {
 			}
 		}
 		
-	
+		
 		stage('Unit Tests') {
 			steps{
 				echo "------------>Unit Tests<------------"
-				sh 'gradle test'
+				sh 'gradle --b ./microservicio/build.gradletest'
 				junit '**/build/test-results/test/*.xml' //aggregate test results - JUnit
 			}
 		}
