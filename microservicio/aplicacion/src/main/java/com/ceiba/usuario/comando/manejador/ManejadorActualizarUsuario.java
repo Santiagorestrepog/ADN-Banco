@@ -21,6 +21,8 @@ public class ManejadorActualizarUsuario implements ManejadorComando<ComandoUsuar
 
     public void ejecutar(ComandoUsuario comandoUsuario) {
         Usuario usuario = this.fabricaUsuario.crear(comandoUsuario);
+
+
         this.servicioActualizarUsuario.ejecutar(usuario);
     }
 }

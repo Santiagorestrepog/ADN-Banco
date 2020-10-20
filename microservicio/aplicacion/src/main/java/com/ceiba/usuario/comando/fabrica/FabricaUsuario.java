@@ -5,6 +5,8 @@ import org.springframework.stereotype.Component;
 
 import com.ceiba.usuario.comando.ComandoUsuario;
 
+import java.time.LocalDateTime;
+
 @Component
 public class FabricaUsuario {
 
@@ -12,8 +14,12 @@ public class FabricaUsuario {
         return new Usuario(
                 comandoUsuario.getId(),
                 comandoUsuario.getNombre(),
+                comandoUsuario.getApellidos(),
+                comandoUsuario.getCedula(),
+                comandoUsuario.getTipoDocumento(),
+                comandoUsuario.getCorreo(),
                 comandoUsuario.getClave(),
-                comandoUsuario.getFecha()
+                comandoUsuario.getFechaCreacion()
         );
     }
 

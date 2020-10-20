@@ -1,0 +1,2 @@
+select id,valorCredito,idUsuario,tipoCredito,tazaInteres,cuotasTotales,cuotasPagadas,estado,valorActual,interesMora,fechacredito
+from credito

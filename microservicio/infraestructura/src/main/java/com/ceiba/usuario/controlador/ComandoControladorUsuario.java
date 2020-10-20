@@ -28,13 +28,14 @@ public class ComandoControladorUsuario {
 		this.manejadorEliminarUsuario = manejadorEliminarUsuario;
 		this.manejadorActualizarUsuario = manejadorActualizarUsuario;
     }
-
+	@CrossOrigin(origins = "http://localhost:4200")
     @PostMapping
     @ApiOperation("Crear Usuario")
     public ComandoRespuesta<Long> crear(@RequestBody ComandoUsuario comandoUsuario) {
         return manejadorCrearUsuario.ejecutar(comandoUsuario);
     }
 
+	@CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping(value="/{id}")
 	@ApiOperation("Eliminar Usuario")
 	public void eliminar(@PathVariable Long id) {

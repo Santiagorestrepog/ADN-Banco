@@ -3,6 +3,7 @@ package com.ceiba.usuario.adaptador.dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 import com.ceiba.infraestructura.jdbc.MapperResult;
 import com.ceiba.usuario.modelo.dto.DtoUsuario;
@@ -15,10 +16,16 @@ public class MapeoUsuario implements RowMapper<DtoUsuario>, MapperResult {
 
         Long id = resultSet.getLong("id");
         String nombre = resultSet.getString("nombre");
+        String apellidos = resultSet.getString("apellidos");
+        String cedula = resultSet.getString("cedula");
+        String tipoDocumento = resultSet.getString("tipoDocumento");
+        String correo = resultSet.getString("correo");
         String clave = resultSet.getString("clave");
-        LocalDateTime fecha = extraerLocalDateTime(resultSet, "fecha_creacion");
+        Date fechaCreacion = resultSet.getDate("fechaCreacion");
 
-        return new DtoUsuario(id,nombre,clave,fecha);
+        return new DtoUsuario(id,nombre,apellidos,cedula,tipoDocumento,correo,clave,fechaCreacion);
     }
+
+
 
 }

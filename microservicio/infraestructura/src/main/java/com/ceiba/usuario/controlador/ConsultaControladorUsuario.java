@@ -3,6 +3,7 @@ package com.ceiba.usuario.controlador;
 import java.util.List;
 
 import com.ceiba.usuario.consulta.ManejadorListarUsuarios;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,8 +24,9 @@ public class ConsultaControladorUsuario {
         this.manejadorListarUsuarios = manejadorListarUsuarios;
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping
-    @ApiOperation("Listar Usuarios")
+    @ApiOperation("Listar")
     public List<DtoUsuario> listar() {
         return this.manejadorListarUsuarios.ejecutar();
     }

@@ -1,2 +1,2 @@
-select id,nombre,clave,fecha_creacion
+select id,nombre,apellidos,cedula,tipoDocumento,correo,clave,fechaCreacion
 from usuario
