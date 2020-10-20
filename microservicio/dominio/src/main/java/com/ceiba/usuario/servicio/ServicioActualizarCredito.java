@@ -1,17 +1,12 @@
 package com.ceiba.usuario.servicio;
 
-import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.usuario.modelo.entidad.Credito;
 import com.ceiba.usuario.puerto.repositorio.RepositorioCredito;
-
-import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.Date;
 
 
 public class ServicioActualizarCredito {
-
-    private static final String EL_USUARIO_YA_EXISTE_EN_EL_SISTEMA = "El usuario ya existe en el sistema";
 
     private final RepositorioCredito repositorioCredito;
 
@@ -33,7 +28,6 @@ public class ServicioActualizarCredito {
 
         Calendar fecha = Calendar.getInstance();
         fecha.setTime(fechaCredito);
-        int dias = 0;
 
          int diaSemana = fecha.get(Calendar.DAY_OF_WEEK);
 
@@ -41,7 +35,7 @@ public class ServicioActualizarCredito {
 
              fecha.add(Calendar.DAY_OF_MONTH, 1);
 
-         }else if(diaSemana!=Calendar.SATURDAY){
+         }else if(diaSemana != Calendar.SATURDAY){
 
              fecha.add(Calendar.DAY_OF_MONTH, 2);
 
@@ -67,7 +61,7 @@ public class ServicioActualizarCredito {
 
         if(fechaRealEntregaCredito.get(Calendar.DAY_OF_MONTH ) > fechaCredito.get(Calendar.DAY_OF_MONTH ) ){
 
-            Integer diasMora = fechaRealEntregaCredito.get(Calendar.DAY_OF_MONTH ) - fechaCredito.get(Calendar.DAY_OF_MONTH );
+           // Integer diasMora = fechaRealEntregaCredito.get(Calendar.DAY_OF_MONTH ) - fechaCredito.get(Calendar.DAY_OF_MONTH );
 
             double ValorInteresMora = (credito.getValorCredito() * credito.getTazaInteres()) / 100;
             double ValorActualIntereses = credito.getValorActual() + (ValorInteresMora * daysdiff);
