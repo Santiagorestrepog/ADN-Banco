@@ -1,0 +1,1 @@
+select tasa from tasaInteres where id = :idTasa

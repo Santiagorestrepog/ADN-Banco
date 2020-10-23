@@ -26,4 +26,11 @@ public interface RepositorioCredito {
      */
     void actualizar(Credito credito);
 
+    /**
+     * Permite buscar la tasa de interes de un credito
+     * @param idTasa
+     * @return valor tasa
+     */
+    double tasaInteres(Integer idTasa);
+
 }

@@ -17,7 +17,9 @@ public class ServicioActualizarCredito {
 
     public void ejecutar(Credito credito) {
 
+
         Date fechaActual = new Date();
+
 
         Date fechaRealEntrega = validarfecha(fechaActual);
 
@@ -31,7 +33,7 @@ public class ServicioActualizarCredito {
 
          int diaSemana = fecha.get(Calendar.DAY_OF_WEEK);
 
-         if (diaSemana!=Calendar.SUNDAY ) {
+         if (diaSemana != Calendar.SUNDAY ) {
 
              fecha.add(Calendar.DAY_OF_MONTH, 1);
 
@@ -48,13 +50,13 @@ public class ServicioActualizarCredito {
     public Credito validarMora(Date fechaRealEntrega, Credito credito){
 
         Calendar fechaCredito = Calendar.getInstance();
-        fechaCredito.setTime(credito.getFechacredito());
+        fechaCredito.setTime(credito.getFechaCredito());
 
         fechaCredito.add(Calendar.MONTH, credito.getCuotasPagadas());
 
         Calendar fechaRealEntregaCredito = Calendar.getInstance();
         fechaRealEntregaCredito.setTime(fechaRealEntrega);
-        long diff = fechaRealEntrega.getTime() - credito.getFechacredito().getTime();
+        long diff = fechaRealEntrega.getTime() - credito.getFechaCredito().getTime();
         long diffDays = diff / (24 * 60 * 60 * 1000) + 1;
         int daysdiff = (int) diffDays;
 
@@ -63,10 +65,10 @@ public class ServicioActualizarCredito {
 
            // Integer diasMora = fechaRealEntregaCredito.get(Calendar.DAY_OF_MONTH ) - fechaCredito.get(Calendar.DAY_OF_MONTH );
 
-            double ValorInteresMora = (credito.getValorCredito() * credito.getTasaInteres()) / 100;
-            double ValorActualIntereses = credito.getValorActual() + (ValorInteresMora * daysdiff);
+           // double ValorInteresMora = (credito.getValorCredito() * credito.getTasaInteres()) / 100;
+            //double ValorActualIntereses = credito.getValorActual() + (ValorInteresMora * daysdiff);
 
-            credito.setValorActual(ValorActualIntereses);
+            //credito.setValorActual(ValorActualIntereses);
 
         }
 

@@ -18,7 +18,6 @@ public class FabricaUsuario {
                 comandoUsuario.getCedula(),
                 comandoUsuario.getTipoDocumento(),
                 comandoUsuario.getCorreo(),
-                comandoUsuario.getClave(),
                 comandoUsuario.getFechaCreacion()
         );
     }

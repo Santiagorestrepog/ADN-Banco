@@ -6,33 +6,35 @@ import java.util.Date;
 public class CreditoTestDataBuilder {
 
     private Long id;
-    private Double valorCredito;
     private Integer idUsuario;
-    private String tipoCredito;
-    private Integer tasaInteres;
+    private Integer idTasa;
+    private Double valorCredito;
+    private Double valorCreditoInteres;
+    private Double valorTotalPagar;
+    private Double valorTotalPagado;
     private Integer cuotasTotales;
     private Integer cuotasPagadas;
-    private Boolean estado;
-    private Double valorActual;
     private Double interesMora;
-    private Date fechacredito;
+    private Boolean estado;
+    private Date fechaCredito;
 
     public CreditoTestDataBuilder() {
 
-        valorCredito = 10000.0;
         idUsuario = 123;
-        tipoCredito = "Libre";
-        tasaInteres = 1;
+        idTasa = 1;
+        valorCredito = 100000.0;
+        valorCreditoInteres = 110000.0;
+        valorTotalPagar = 110000.0;
+        valorTotalPagado = 0.0;
         cuotasTotales = 3;
-        cuotasPagadas = 2;
-        estado = true;
-        valorActual = 10000.0;
+        cuotasPagadas = 0;
         interesMora = 0.0;
-        fechacredito = new Date();
+        estado = true;
+        fechaCredito = new Date();
 
     }
 
-    public Credito build() { return new Credito(id,valorCredito,idUsuario,tipoCredito,tasaInteres,cuotasTotales,cuotasPagadas,estado,valorActual,interesMora, fechacredito);
+    public Credito build() { return new Credito(id, idUsuario, idTasa, valorCredito, valorCreditoInteres, valorTotalPagar, valorTotalPagado, cuotasTotales, cuotasPagadas, interesMora, estado, fechaCredito);
     }
 
 

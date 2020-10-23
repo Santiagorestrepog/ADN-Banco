@@ -1,6 +1,5 @@
 package com.ceiba.usuario.comando;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 
 import lombok.AllArgsConstructor;
@@ -15,16 +14,17 @@ import lombok.Setter;
 public class ComandoCredito {
 
     private Long id;
-    private Double valorCredito;
     private Integer idUsuario;
-    private String tipoCredito;
-    private Integer tasaInteres;
+    private Integer idTasa;
+    private Double valorCredito;
+    private Double valorCreditoInteres;
+    private Double valorTotalPagar;
+    private Double valorTotalPagado;
     private Integer cuotasTotales;
     private Integer cuotasPagadas;
-    private Boolean estado;
-    private Double valorActual;
     private Double interesMora;
-    private Date fechacredito;
+    private Boolean estado;
+    private Date fechaCredito;
 
 
 }

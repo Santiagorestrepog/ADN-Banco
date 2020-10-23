@@ -18,18 +18,22 @@ public class RepositorioCreditoMysql implements RepositorioCredito {
     @SqlStatement(namespace="credito", value="actualizar")
     private static String sqlActualizar;
 
-    @SqlStatement(namespace="credito", value="existe")
-    private static String sqlExiste;
+    @SqlStatement(namespace="credito", value="existeCredito")
+    private static String sqlExisteCredito;
+
+    @SqlStatement(namespace="credito", value="tasaInteres")
+    private static String sqlTasaInteres;
 
 
     public RepositorioCreditoMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
     }
 
-
     @Override
     public Long crear(Credito credito) {
+
         return this.customNamedParameterJdbcTemplate.crear(credito, sqlCrear);
+
     }
 
     @Override
@@ -39,14 +43,23 @@ public class RepositorioCreditoMysql implements RepositorioCredito {
         paramSource.addValue("idUsuario", usuario);
         paramSource.addValue("estado", estado);
 
-        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste,paramSource, Boolean.class);
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExisteCredito,paramSource, Boolean.class);
 
     }
-
 
     @Override
     public void actualizar(Credito credito) {
         this.customNamedParameterJdbcTemplate.actualizar(credito, sqlActualizar);
+    }
+
+    @Override
+    public double tasaInteres(Integer idTasa) {
+
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("idTasa", idTasa);
+
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlTasaInteres,paramSource, Double.class);
+
     }
 
 

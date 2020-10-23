@@ -13,7 +13,6 @@ public class UsuarioTestDataBuilder {
     private String cedula;
     private String tipoDocumento;
     private String correo;
-    private String clave;
     private Date fechaCreacion;
 
     public UsuarioTestDataBuilder() {
@@ -22,13 +21,7 @@ public class UsuarioTestDataBuilder {
         cedula = "Cedula";
         tipoDocumento = "tipoDocumento";
         correo = "correo@correo.com";
-        clave = "1231564";
         fechaCreacion = new Date();
-    }
-
-    public UsuarioTestDataBuilder conClave(String clave) {
-        this.clave = clave;
-        return this;
     }
 
     public UsuarioTestDataBuilder conId(Long id) {
@@ -37,6 +30,6 @@ public class UsuarioTestDataBuilder {
     }
 
     public Usuario build() {
-        return new Usuario(id,nombre,apellidos,cedula,tipoDocumento,correo,clave,fechaCreacion);
+        return new Usuario(id,nombre,apellidos,cedula,tipoDocumento,correo,fechaCreacion);
     }
 }

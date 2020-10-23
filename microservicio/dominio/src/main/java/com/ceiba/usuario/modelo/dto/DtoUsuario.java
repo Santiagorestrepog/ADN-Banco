@@ -3,7 +3,6 @@ package com.ceiba.usuario.modelo.dto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 
 @Getter
@@ -15,7 +14,6 @@ public class DtoUsuario {
     private String cedula;
     private String tipoDocumento;
     private String correo;
-    private String clave;
     private Date fechaCreacion;
 
 }

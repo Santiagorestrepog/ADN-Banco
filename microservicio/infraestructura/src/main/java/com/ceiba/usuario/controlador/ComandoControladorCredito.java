@@ -34,9 +34,10 @@ public class ComandoControladorCredito {
     }
 
     @PutMapping(value="/{id}")
-    @ApiOperation("Actualizar Usuario")
+    @ApiOperation("Actualizar Pago Credito")
     public void actualizar(@RequestBody ComandoCredito comandoCredito,@PathVariable Long id) {
         comandoCredito.setId(id);
         manejadorActualizarCredito.ejecutar(comandoCredito);
     }
+
 }

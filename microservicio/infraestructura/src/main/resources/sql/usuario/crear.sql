@@ -1,1 +1,1 @@
-insert into usuario (nombre,apellidos,cedula,tipoDocumento,correo,clave,fechaCreacion) values (:nombre, :apellidos, :cedula, :tipoDocumento, :correo, :clave, now())
+insert into usuario (nombre,apellidos,cedula,tipoDocumento,correo,fechaCreacion) values (:nombre, :apellidos, :cedula, :tipoDocumento, :correo, now())

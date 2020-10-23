@@ -20,10 +20,9 @@ public class MapeoUsuario implements RowMapper<DtoUsuario>, MapperResult {
         String cedula = resultSet.getString("cedula");
         String tipoDocumento = resultSet.getString("tipoDocumento");
         String correo = resultSet.getString("correo");
-        String clave = resultSet.getString("clave");
         Date fechaCreacion = resultSet.getDate("fechaCreacion");
 
-        return new DtoUsuario(id,nombre,apellidos,cedula,tipoDocumento,correo,clave,fechaCreacion);
+        return new DtoUsuario(id,nombre,apellidos,cedula,tipoDocumento,correo,fechaCreacion);
     }
 
 

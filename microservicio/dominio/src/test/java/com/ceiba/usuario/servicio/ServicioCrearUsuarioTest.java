@@ -12,13 +12,13 @@ import com.ceiba.BasePrueba;
 
 public class ServicioCrearUsuarioTest {
 
-    @Test
-    public void validarClaveLongitudMenor4Test() {
+    //@Test
+    //public void validarClaveLongitudMenor4Test() {
         // arrange
-        UsuarioTestDataBuilder usuarioTestDataBuilder = new UsuarioTestDataBuilder().conClave("124");
+      //  UsuarioTestDataBuilder usuarioTestDataBuilder = new UsuarioTestDataBuilder().conClave("124");
         // act - assert
-        BasePrueba.assertThrows(() -> usuarioTestDataBuilder.build(), ExcepcionLongitudValor.class, "La clave debe tener una longitud mayor o igual a 4");
-    }
+        //BasePrueba.assertThrows(() -> usuarioTestDataBuilder.build(), ExcepcionLongitudValor.class, "La clave debe tener una longitud mayor o igual a 4");
+    //}-->
 
     @Test
     public void validarUsuarioExistenciaPreviaTest() {

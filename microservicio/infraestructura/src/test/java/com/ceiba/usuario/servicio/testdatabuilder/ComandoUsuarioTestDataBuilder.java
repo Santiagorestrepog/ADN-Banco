@@ -14,7 +14,6 @@ public class ComandoUsuarioTestDataBuilder {
     private String cedula;
     private String tipoDocumento;
     private String correo;
-    private String clave;
     private Date fechaCreacion;
 
 
@@ -24,12 +23,11 @@ public class ComandoUsuarioTestDataBuilder {
         cedula = "1152691643";
         tipoDocumento = "CC";
         correo = "correo@correo.com";
-        clave = "1231564";
         fechaCreacion = new Date();
     }
 
 
     public ComandoUsuario build() {
-        return new ComandoUsuario(id,nombre,apellidos,cedula,tipoDocumento,correo,clave,fechaCreacion);
+        return new ComandoUsuario(id,nombre,apellidos,cedula,tipoDocumento,correo,fechaCreacion);
     }
 }

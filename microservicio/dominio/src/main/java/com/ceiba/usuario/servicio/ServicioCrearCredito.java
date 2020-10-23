@@ -15,7 +15,9 @@ public class ServicioCrearCredito {
     }
 
     public Long ejecutar(Credito credito) {
+
         validarExistenciaPreviaCredito(credito);
+        calcularInteres(credito);
         return this.repositorioCredito.crear(credito);
     }
 
@@ -24,6 +26,18 @@ public class ServicioCrearCredito {
         if(existe) {
             throw new ExcepcionDuplicidad(EL_USUARIO_TIENE_CREDITO_EN_EL_SISTEMA);
         }
+    }
+
+    private void calcularInteres(Credito credito){
+
+        double tasainteres = this.repositorioCredito.tasaInteres(credito.getIdTasa());
+
+        Double valorInteres = credito.getValorCredito() * tasainteres / 100;
+        Double valorCreditoInteres = credito.getValorCredito() + valorInteres;
+
+        credito.setValorCreditoInteres(valorCreditoInteres);
+        credito.setValorTotalPagar(valorCreditoInteres);
+
     }
 
 }

@@ -6,6 +6,8 @@ import lombok.Getter;
 import java.time.LocalDateTime;
 import java.util.Date;
 
+//map consulta
+
 @Getter
 @AllArgsConstructor
 public class DtoCredito {
@@ -15,7 +17,7 @@ public class DtoCredito {
     private String tipoCredito;
     private Integer tasaInteres;
     private Integer cuotasTotales;
-    private Integer cuotasPgadas;
+    private Integer cuotasPagadas;
     private Boolean estado;
     private Double valorActual;
     private Double interesMora;
