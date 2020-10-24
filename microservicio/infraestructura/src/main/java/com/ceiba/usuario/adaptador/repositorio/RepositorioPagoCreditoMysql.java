@@ -14,6 +14,7 @@ public class RepositorioPagoCreditoMysql implements RepositorioPagoCredito {
     @SqlStatement(namespace="pagoCredito", value="crear")
     private static String sqlCrear;
 
+
     public RepositorioPagoCreditoMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
     }
@@ -24,4 +25,6 @@ public class RepositorioPagoCreditoMysql implements RepositorioPagoCredito {
         return this.customNamedParameterJdbcTemplate.crear(pagoCredito, sqlCrear);
 
     }
+
+
 }

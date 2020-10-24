@@ -2,11 +2,8 @@ package com.ceiba.usuario.modelo.entidad;
 
 
 import lombok.Getter;
-
 import java.util.Date;
-
 import static com.ceiba.dominio.ValidadorArgumento.validarObligatorio;
-
 
 @Getter
 public class Usuario {

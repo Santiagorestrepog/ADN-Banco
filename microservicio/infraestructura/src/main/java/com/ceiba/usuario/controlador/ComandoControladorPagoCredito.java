@@ -1,7 +1,6 @@
 package com.ceiba.usuario.controlador;
 
 import com.ceiba.ComandoRespuesta;
-import com.ceiba.usuario.comando.ComandoCredito;
 import com.ceiba.usuario.comando.ComandoPagoCredito;
 import com.ceiba.usuario.comando.manejador.ManejadorCrearPagoCredito;
 import io.swagger.annotations.Api;

@@ -1,11 +1,14 @@
-update CREDITO
-set valorCredito = :valorCredito,
-    idUsuario = :idUsuario,
-    tipoCredito = :tipoCredito,
-    tasaInteres = :tasaInteres,
+update credito
+set idUsuario = :idUsuario,
+    idTasa = :idTasa,
+    valorCredito = :valorCredito,
+    valorCreditoInteres = :valorCreditoInteres,
+    valorTotalPagar = :valorTotalPagar,
+    valorTotalPagado = :valorTotalPagado,
+    valorCuotas = :valorCuotas,
     cuotasTotales = :cuotasTotales,
     cuotasPagadas = :cuotasPagadas,
-	estado = :estado,
-	valorActual = :valorActual,
-	interesMora = :interesMora
+    interesMora = :interesMora,
+    estado = :estado,
+    fechaCredito = :fechaCredito
 where id = :id

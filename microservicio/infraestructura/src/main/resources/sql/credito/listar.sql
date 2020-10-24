@@ -1,2 +1,2 @@
-select id,valorCredito,idUsuario,tipoCredito,tasaInteres,cuotasTotales,cuotasPagadas,estado,valorActual,interesMora,fechacredito
+select id,idUsuario,idTasa,valorCredito,valorCreditoInteres,valorTotalPagar,valorTotalPagado,valorCuotas,cuotasTotales,cuotasPagadas,interesMora,estado,fechaCredito
 from credito

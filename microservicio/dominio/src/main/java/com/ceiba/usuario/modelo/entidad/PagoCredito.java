@@ -13,6 +13,7 @@ public class PagoCredito {
 
     private static final String SE_DEBE_INGRESAR_LA_FECHA_PAGO = "Se debe ingresar la fecha de pago";
     private static final String SE_DEBE_INGRESAR_ID_CREDITO = "Se debe ingresar el id del credito";
+    private static final String SE_DEBE_INGRESAR_TIPO_PAGO = "Se debe ingresar tipo pago";
 
 
     private Long id;
@@ -27,6 +28,8 @@ public class PagoCredito {
         validarObligatorio(idCredito, SE_DEBE_INGRESAR_ID_CREDITO);
 
         validarObligatorio(fechaPago, SE_DEBE_INGRESAR_LA_FECHA_PAGO);
+
+        validarObligatorio(tipoPago, SE_DEBE_INGRESAR_LA_FECHA_PAGO);
 
         this.id = id;
         this.idCredito = idCredito;

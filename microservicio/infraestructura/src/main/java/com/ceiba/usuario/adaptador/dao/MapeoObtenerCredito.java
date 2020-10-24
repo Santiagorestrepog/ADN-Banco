@@ -1,17 +1,18 @@
 package com.ceiba.usuario.adaptador.dao;
 
 import com.ceiba.infraestructura.jdbc.MapperResult;
-import com.ceiba.usuario.modelo.dto.DtoCredito;
+import com.ceiba.usuario.modelo.entidad.Credito;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 
-public class MapeoCredito implements RowMapper<DtoCredito>, MapperResult {
+
+public class MapeoObtenerCredito implements RowMapper<Credito>, MapperResult  {
 
     @Override
-    public DtoCredito mapRow(ResultSet resultSet, int rowNum) throws SQLException {
+    public Credito mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
         Long id = resultSet.getLong("id");
         Integer idUsuario = resultSet.getInt("idUsuario");
@@ -28,7 +29,7 @@ public class MapeoCredito implements RowMapper<DtoCredito>, MapperResult {
         Date fechaCredito = resultSet.getDate("fechaCredito");
 
 
-        return new DtoCredito(id,idUsuario,idTasa,valorCredito,valorCreditoInteres,valorTotalPagar,valorTotalPagado,
+        return new Credito(id,idUsuario,idTasa,valorCredito,valorCreditoInteres,valorTotalPagar,valorTotalPagado,
                 valorCuotas,cuotasTotales,cuotasPagadas,interesMora,estado,fechaCredito);
     }
 }

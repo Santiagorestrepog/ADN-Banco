@@ -36,8 +36,8 @@ public class BeanServicio {
     }
 
     @Bean
-    public ServicioCrearPagoCredito servicioCrearPagoCredito(RepositorioPagoCredito repositorioPagoCredito) {
-        return  new ServicioCrearPagoCredito(repositorioPagoCredito);
+    public ServicioPagorCredito servicioCrearPagoCredito(RepositorioPagoCredito repositorioPagoCredito, RepositorioCredito repositorioCredito) {
+        return  new ServicioPagorCredito(repositorioPagoCredito, repositorioCredito );
     }
 	
 

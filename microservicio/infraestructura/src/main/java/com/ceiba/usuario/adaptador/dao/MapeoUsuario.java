@@ -2,7 +2,6 @@ package com.ceiba.usuario.adaptador.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 import com.ceiba.infraestructura.jdbc.MapperResult;

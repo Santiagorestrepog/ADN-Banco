@@ -20,6 +20,7 @@ public class ComandoCredito {
     private Double valorCreditoInteres;
     private Double valorTotalPagar;
     private Double valorTotalPagado;
+    private Double valorCuotas;
     private Integer cuotasTotales;
     private Integer cuotasPagadas;
     private Double interesMora;

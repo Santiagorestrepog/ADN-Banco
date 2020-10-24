@@ -32,6 +32,7 @@ public class Credito {
     private Double valorCreditoInteres;
     private Double valorTotalPagar;
     private Double valorTotalPagado;
+    private Double valorCuotas;
     private Integer cuotasTotales;
     private Integer cuotasPagadas;
     private Double interesMora;
@@ -39,7 +40,7 @@ public class Credito {
     private Date fechaCredito;
 
 
-    public Credito(Long id, Integer idUsuario, Integer idTasa, Double valorCredito, Double valorCreditoInteres, Double valorTotalPagar, Double valorTotalPagado, Integer cuotasTotales, Integer cuotasPagadas, Double interesMora, Boolean estado, Date fechaCredito) {
+    public Credito(Long id, Integer idUsuario, Integer idTasa, Double valorCredito, Double valorCreditoInteres, Double valorTotalPagar, Double valorTotalPagado,Double valorCuotas, Integer cuotasTotales, Integer cuotasPagadas, Double interesMora, Boolean estado, Date fechaCredito) {
 
         validarObligatorio(idUsuario, SE_DEBE_INGRESAR_UN_IDUSUARIO_VALIDO);
 
@@ -61,10 +62,12 @@ public class Credito {
         this.valorCreditoInteres = valorCreditoInteres;
         this.valorTotalPagar = valorTotalPagar;
         this.valorTotalPagado = valorTotalPagado;
+        this.valorCuotas = valorCuotas;
         this.cuotasTotales = cuotasTotales;
         this.cuotasPagadas = cuotasPagadas;
         this.interesMora = interesMora;
         this.estado = estado;
         this.fechaCredito = fechaCredito;
     }
+
 }

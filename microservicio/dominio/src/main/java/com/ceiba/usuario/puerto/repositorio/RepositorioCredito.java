@@ -2,7 +2,6 @@ package com.ceiba.usuario.puerto.repositorio;
 
 import com.ceiba.usuario.modelo.entidad.Credito;
 
-
 public interface RepositorioCredito {
     /**
      * Permite crear un credito
@@ -32,5 +31,12 @@ public interface RepositorioCredito {
      * @return valor tasa
      */
     double tasaInteres(Integer idTasa);
+
+    /**
+     * Permite crear un pago de credito
+     * @param idCredito
+     * @return creditos
+     */
+    Credito obtenerCredito(Integer idCredito);
 
 }

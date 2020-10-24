@@ -1,6 +1,5 @@
 package com.ceiba.usuario.comando.manejador;
 
-import com.ceiba.manejador.ManejadorComando;
 import com.ceiba.usuario.modelo.entidad.Credito;
 import com.ceiba.usuario.servicio.ServicioActualizarCredito;
 import org.springframework.stereotype.Component;

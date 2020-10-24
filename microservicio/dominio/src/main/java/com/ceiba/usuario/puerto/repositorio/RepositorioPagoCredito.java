@@ -11,4 +11,5 @@ public interface RepositorioPagoCredito {
      */
     Long crear(PagoCredito pagoCredito);
 
+
 }

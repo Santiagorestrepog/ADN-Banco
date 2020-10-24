@@ -2,6 +2,7 @@ package com.ceiba.usuario.adaptador.repositorio;
 
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
+import com.ceiba.usuario.adaptador.dao.MapeoObtenerCredito;
 import com.ceiba.usuario.modelo.entidad.Credito;
 import com.ceiba.usuario.puerto.repositorio.RepositorioCredito;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -23,6 +24,9 @@ public class RepositorioCreditoMysql implements RepositorioCredito {
 
     @SqlStatement(namespace="credito", value="tasaInteres")
     private static String sqlTasaInteres;
+
+    @SqlStatement(namespace="credito", value="obtenerCredito")
+    private static String sqlObtenerCredito;
 
 
     public RepositorioCreditoMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
@@ -59,6 +63,16 @@ public class RepositorioCreditoMysql implements RepositorioCredito {
         paramSource.addValue("idTasa", idTasa);
 
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlTasaInteres,paramSource, Double.class);
+
+    }
+
+    @Override
+    public Credito obtenerCredito(Integer idCredito){
+
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("idCredito", idCredito);
+
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerCredito,paramSource, new MapeoObtenerCredito());
 
     }
 

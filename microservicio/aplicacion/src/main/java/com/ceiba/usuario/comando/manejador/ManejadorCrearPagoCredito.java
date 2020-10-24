@@ -5,7 +5,7 @@ import com.ceiba.manejador.ManejadorComandoRespuesta;
 import com.ceiba.usuario.comando.ComandoPagoCredito;
 import com.ceiba.usuario.comando.fabrica.FabricaPagoCredito;
 import com.ceiba.usuario.modelo.entidad.PagoCredito;
-import com.ceiba.usuario.servicio.ServicioCrearPagoCredito;
+import com.ceiba.usuario.servicio.ServicioPagorCredito;
 
 import org.springframework.stereotype.Component;
 
@@ -13,16 +13,16 @@ import org.springframework.stereotype.Component;
 public class ManejadorCrearPagoCredito implements ManejadorComandoRespuesta<ComandoPagoCredito, ComandoRespuesta<Long>>{
 
     private final FabricaPagoCredito fabricaPagoCredito;
-    private final ServicioCrearPagoCredito servicioCrearPagoCredito;
+    private final ServicioPagorCredito servicioPagorCredito;
 
-    public ManejadorCrearPagoCredito(FabricaPagoCredito fabricaPagoCredito, ServicioCrearPagoCredito servicioCrearPagoCredito) {
+    public ManejadorCrearPagoCredito(FabricaPagoCredito fabricaPagoCredito, ServicioPagorCredito servicioPagorCredito) {
         this.fabricaPagoCredito = fabricaPagoCredito;
-        this.servicioCrearPagoCredito = servicioCrearPagoCredito;
+        this.servicioPagorCredito = servicioPagorCredito;
     }
 
     public ComandoRespuesta<Long> ejecutar(ComandoPagoCredito comandoPagoCredito) {
         PagoCredito pagoCredito = this.fabricaPagoCredito.crear(comandoPagoCredito);
-        return new ComandoRespuesta<>(this.servicioCrearPagoCredito.ejecutar(pagoCredito));
+        return new ComandoRespuesta<>(this.servicioPagorCredito.ejecutar(pagoCredito));
     }
 
 }

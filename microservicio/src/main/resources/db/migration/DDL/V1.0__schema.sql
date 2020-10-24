@@ -24,6 +24,7 @@ create table credito (
  valorCreditoInteres double not null,
  valorTotalPagar double not null,
  valorTotalPagado double DEFAULT 0.0,
+ valorCuotas double not null,
  cuotasTotales int(10) not null,
  cuotasPagadas int(10) DEFAULT 0,
  interesMora double DEFAULT 0,

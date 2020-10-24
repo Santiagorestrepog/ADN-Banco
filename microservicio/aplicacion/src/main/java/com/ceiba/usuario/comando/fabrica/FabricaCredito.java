@@ -19,6 +19,7 @@ public class FabricaCredito {
                 comandoCredito.getValorCreditoInteres(),
                 comandoCredito.getValorTotalPagar(),
                 comandoCredito.getValorTotalPagado(),
+                comandoCredito.getValorCuotas(),
                 comandoCredito.getCuotasTotales(),
                 comandoCredito.getCuotasPagadas(),
                 comandoCredito.getInteresMora(),
