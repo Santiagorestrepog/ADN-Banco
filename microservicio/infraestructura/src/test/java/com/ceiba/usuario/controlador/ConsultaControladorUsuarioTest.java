@@ -7,7 +7,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.ceiba.ApplicationMock;
-import com.ceiba.usuario.controlador.ConsultaControladorUsuario;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,11 +29,11 @@ public class ConsultaControladorUsuarioTest {
         // arrange
 
         // act - assert
-      //  mocMvc.perform(get("/usuarios")
-        //        .contentType(MediaType.APPLICATION_JSON))
-          //      .andExpect(status().isOk())
-            //    .andExpect(jsonPath("$", hasSize(1)))
-              //  .andExpect(jsonPath("$[0].nombre", is("test")));
+        mocMvc.perform(get("/usuarios")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(4)))
+                .andExpect(jsonPath("$[0].nombre", is("Felipe")));
     }
 
 

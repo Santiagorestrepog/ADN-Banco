@@ -17,10 +17,10 @@ public class ComandoUsuarioTestDataBuilder {
 
 
     public ComandoUsuarioTestDataBuilder() {
-        id = 2l;
-        nombre = "Santiago";
+        id = 12l;
+        nombre = "Juan";
         apellidos = "Restrepo";
-        cedula = "1152691643";
+        cedula = "1122564995";
         tipoDocumento = "CC";
         correo = "correo@correo.com";
         fechaCreacion = new Date();

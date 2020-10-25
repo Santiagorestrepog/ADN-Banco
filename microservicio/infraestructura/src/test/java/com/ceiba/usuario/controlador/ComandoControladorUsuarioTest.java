@@ -1,7 +1,7 @@
 package com.ceiba.usuario.controlador;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -40,7 +40,7 @@ public class ComandoControladorUsuarioTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(usuario)))
                 .andExpect(status().isOk())
-                .andExpect(content().json("{'valor': 2}"));
+                .andExpect(content().json("{'valor': 5 }"));
     }
 
     @Test
@@ -49,6 +49,7 @@ public class ComandoControladorUsuarioTest {
         Long id = 2L;
         ComandoUsuario usuario = new ComandoUsuarioTestDataBuilder().build();
 
+        usuario.setCedula("1234567");
         // act - assert
         mocMvc.perform(put("/usuarios/{id}",id)
                 .contentType(MediaType.APPLICATION_JSON)
@@ -59,7 +60,7 @@ public class ComandoControladorUsuarioTest {
     @Test
     public void eliminar() throws Exception {
         // arrange
-        Long id = 2L;
+        Long id = 3L;
 
         // act - assert
         mocMvc.perform(delete("/usuarios/{id}",id)
