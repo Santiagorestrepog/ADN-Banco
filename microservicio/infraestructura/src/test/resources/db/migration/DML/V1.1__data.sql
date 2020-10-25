@@ -1,1 +1,1 @@
-insert into usuario(nombre,clave,fechaCreacion) values('test','1234',now())
+insert into usuario (nombre,apellidos,cedula,tipoDocumento,correo,fechaCreacion) values ('Felipe', 'restrepo', 43529937, 'CC', 'Hola@hola.com' , now())

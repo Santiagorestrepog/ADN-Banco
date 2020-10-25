@@ -15,7 +15,9 @@ public class ComandoUsuarioTestDataBuilder {
     private Date fechaCreacion;
 
 
+
     public ComandoUsuarioTestDataBuilder() {
+        id = 2l;
         nombre = "Santiago";
         apellidos = "Restrepo";
         cedula = "1152691643";

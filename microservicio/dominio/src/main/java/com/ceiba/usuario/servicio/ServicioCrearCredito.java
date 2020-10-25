@@ -24,7 +24,7 @@ public class ServicioCrearCredito {
 
     private void validarExistenciaPreviaCredito(Credito credito) {
 
-        boolean existe = this.repositorioCredito.existe(credito.getIdUsuario(),credito.getEstado());
+        boolean existe = this.repositorioCredito.existe(credito.getIdUsuario(),true);
 
         if(existe) {
 

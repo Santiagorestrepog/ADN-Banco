@@ -70,11 +70,11 @@ public class ServicioPagorCredito {
 
         int diaSemana = fecha.get(Calendar.DAY_OF_WEEK);
 
-        if (diaSemana != Calendar.SUNDAY ) {
+        if (diaSemana == Calendar.SUNDAY ) {
 
             fecha.add(Calendar.DAY_OF_MONTH, 1);
 
-        }else if(diaSemana != Calendar.SATURDAY){
+        }else if(diaSemana == Calendar.SATURDAY){
 
             fecha.add(Calendar.DAY_OF_MONTH, 2);
 
@@ -88,25 +88,40 @@ public class ServicioPagorCredito {
 
         double ValorInteresMora = 0d;
 
+        int cuotaTotal = credito.getCuotasPagadas() + 1;
+
         Calendar fechaCredito = Calendar.getInstance();
+
         fechaCredito.setTime(credito.getFechaCredito());
-        fechaCredito.add(Calendar.MONTH, credito.getCuotasPagadas());
 
         Calendar fechaRealEntregaCredito = Calendar.getInstance();
+
         fechaRealEntregaCredito.setTime(fechaRealEntrega);
-        long diff = fechaRealEntrega.getTime() - credito.getFechaCredito().getTime();
-        long diffDays = diff / (24 * 60 * 60 * 1000) + 1;
-        int daysdiff = (int) diffDays;
 
-        if(fechaRealEntregaCredito.get(Calendar.MONTH) >= fechaCredito.get(Calendar.MONTH )){
+        if(fechaCredito.get(Calendar.MONTH) != fechaRealEntregaCredito.get(Calendar.MONTH)){
 
-            if(fechaRealEntregaCredito.get(Calendar.DAY_OF_MONTH ) > fechaCredito.get(Calendar.DAY_OF_MONTH ) ){
+            fechaCredito.add(Calendar.MONTH, cuotaTotal);
 
-                ValorInteresMora = (credito.getValorCredito() / 100) * daysdiff;
+            Date FechaFeo = fechaCredito.getTime();
+
+            long diff = fechaRealEntrega.getTime() - FechaFeo.getTime();
+            long diffDays = diff / (24 * 60 * 60 * 1000);
+            int daysdiff = (int) diffDays;
+
+
+            if(fechaRealEntregaCredito.get(Calendar.MONTH) >= fechaCredito.get(Calendar.MONTH )){
+
+                if(fechaRealEntregaCredito.get(Calendar.DAY_OF_MONTH ) > fechaCredito.get(Calendar.DAY_OF_MONTH ) ){
+
+                    ValorInteresMora = (credito.getValorCredito() / 100) * daysdiff;
+
+                }
 
             }
 
+
         }
+
 
         return ValorInteresMora;
 

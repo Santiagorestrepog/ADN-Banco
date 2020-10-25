@@ -21,6 +21,8 @@ public class CreditoTestDataBuilder {
 
     public CreditoTestDataBuilder() {
 
+
+
         idUsuario = 123;
         idTasa = 1;
         valorCredito = 100000d;

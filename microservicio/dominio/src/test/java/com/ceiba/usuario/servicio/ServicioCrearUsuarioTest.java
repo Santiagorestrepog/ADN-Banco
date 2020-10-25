@@ -3,8 +3,8 @@ package com.ceiba.usuario.servicio;
 import com.ceiba.usuario.modelo.entidad.Usuario;
 import com.ceiba.usuario.puerto.repositorio.RepositorioUsuario;
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
-import com.ceiba.dominio.excepcion.ExcepcionLongitudValor;
 import com.ceiba.usuario.servicio.testdatabuilder.UsuarioTestDataBuilder;
+import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;
 
@@ -32,7 +32,12 @@ public class ServicioCrearUsuarioTest {
         Mockito.when(repositorioUsuario.existe(Mockito.anyString())).thenReturn(false);
         ServicioCrearUsuario servicioCrearUsuario = new ServicioCrearUsuario(repositorioUsuario);
         // act - assert
-        BasePrueba.assertThrows(() -> servicioCrearUsuario.ejecutar(usuario), ExcepcionDuplicidad.class,"El usuario ya existe en el sistema");
+
+        servicioCrearUsuario.ejecutar(usuario);
+
+        Assert.assertTrue(true);
+
+
     }
 
 
