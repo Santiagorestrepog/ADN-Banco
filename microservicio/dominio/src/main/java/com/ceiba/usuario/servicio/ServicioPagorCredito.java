@@ -86,7 +86,7 @@ public class ServicioPagorCredito {
 
     public Double validarMora(Date fechaRealEntrega, Credito credito){
 
-        double ValorInteresMora = 0d;
+        double valorInteresMora = 0d;
 
         int cuotaTotal = credito.getCuotasPagadas() + 1;
 
@@ -113,7 +113,7 @@ public class ServicioPagorCredito {
 
                 if(fechaRealEntregaCredito.get(Calendar.DAY_OF_MONTH ) > fechaCredito.get(Calendar.DAY_OF_MONTH ) ){
 
-                    ValorInteresMora = (credito.getValorCredito() / 100) * daysdiff;
+                    valorInteresMora = (credito.getValorCredito() / 100) * daysdiff;
 
                 }
 
@@ -123,7 +123,7 @@ public class ServicioPagorCredito {
         }
 
 
-        return ValorInteresMora;
+        return valorInteresMora;
 
     }
 
@@ -141,7 +141,7 @@ public class ServicioPagorCredito {
 
             double valorActualDeuda = credito.getValorTotalPagar();
             double valorTotalPagado = valorActualDeuda + valorMora;
-            double valorTotalPagar = valorActualDeuda - valorActualDeuda;
+            double valorTotalPagar = 0;
 
             pagoCredito.setValorCuota(valorActualDeuda);
             pagoCredito.setValorMora(valorMora);

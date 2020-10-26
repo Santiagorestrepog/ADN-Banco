@@ -29,7 +29,7 @@ public class PagoCredito {
 
         validarObligatorio(fechaPago, SE_DEBE_INGRESAR_LA_FECHA_PAGO);
 
-        validarObligatorio(tipoPago, SE_DEBE_INGRESAR_LA_FECHA_PAGO);
+        validarObligatorio(tipoPago, SE_DEBE_INGRESAR_TIPO_PAGO);
 
         this.id = id;
         this.idCredito = idCredito;

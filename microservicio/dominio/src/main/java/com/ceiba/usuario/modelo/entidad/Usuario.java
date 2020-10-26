@@ -26,7 +26,7 @@ public class Usuario {
     public Usuario(Long id,String nombre, String apellidos, String cedula, String tipoDocumento, String correo,Date fechaCreacion) {
 
         validarObligatorio(nombre, SE_DEBE_INGRESAR_EL_NOMBRE_DE_USUARIO);
-        validarObligatorio(apellidos, SE_DEBE_INGRESAR_EL_NOMBRE_DE_USUARIO);
+        validarObligatorio(apellidos, SE_DEBE_INGRESAR_EL_APELLIDO_DEL_USUARIO);
 
         this.id = id;
         this.nombre = nombre;

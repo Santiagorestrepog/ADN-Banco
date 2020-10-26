@@ -18,8 +18,8 @@ public class UsuarioTestDataBuilder {
     public UsuarioTestDataBuilder() {
         nombre = "Santiago";
         apellidos = "Restrepo";
-        cedula = "Cedula";
-        tipoDocumento = "tipoDocumento";
+        cedula = "1152691643";
+        tipoDocumento = "CC";
         correo = "correo@correo.com";
         fechaCreacion = new Date();
     }
