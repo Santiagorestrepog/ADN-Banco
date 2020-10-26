@@ -9,6 +9,7 @@ import com.ceiba.usuario.puerto.dao.DaoCredito;
 import org.springframework.stereotype.Component;
 
 import com.ceiba.usuario.modelo.dto.DtoCredito;
+import com.ceiba.usuario.modelo.dto.DtoTasa;
 
 @Component
 public class DaoCreditoMysql implements DaoCredito {
@@ -18,6 +19,11 @@ public class DaoCreditoMysql implements DaoCredito {
     @SqlStatement(namespace="credito", value="listar")
     private static String sqlListar;
 
+    @SqlStatement(namespace="credito", value="listarTasa")
+    private static String sqlListarTasa;
+
+
+
     public DaoCreditoMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
     }
@@ -26,6 +32,13 @@ public class DaoCreditoMysql implements DaoCredito {
     public List<DtoCredito> listar() {
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoCredito());
     }
+
+    @Override
+    public List<DtoTasa> listarTasaInteres() {
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListarTasa, new MapeoTasa());
+    }
+
+
 
 
 }
